@@ -1,0 +1,219 @@
+import 'package:flutter/material.dart';
+void main(){
+  runApp(MyApp());
+}
+class MyApp extends StatefulWidget{
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: home(),
+    );
+  }
+}
+
+class home extends StatefulWidget{
+  @override
+  State<home> createState() => _homeState();
+}
+
+class _homeState extends State<home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        leading: Icon(Icons.arrow_back),
+        title: Text('Rooms List'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0,right: 12.0,left: 12.0),
+              child: Container(
+                width: double.infinity,
+                height: 150.0,
+                decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blueGrey
+                ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image(image: NetworkImage('https://th.bing.com/th/id/OIP.arGj1RiXSnX2bw9y9aXeNgHaEi?pid=ImgDet&w=1920&h=1178&rs=1',)),
+                    ),
+                    SizedBox(width: 50.0,),
+                    Text('Double room',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0),),
+                    SizedBox(width: 50.0,),
+                    FloatingActionButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context, MaterialPageRoute(builder: (context)=>Doubleroom())
+                        );
+                        setState(() {
+
+                        });
+                      },
+                      child: Icon(Icons.home),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0,right: 12.0,left: 12.0),
+              child: Container(
+                width: double.infinity,
+                height: 150.0,
+                decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blueGrey
+                ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image(image: NetworkImage('https://th.bing.com/th/id/OIP.USZfi9KkAhBv9lascMrTqAHaFE?pid=ImgDet&w=773&h=530&rs=1',)),
+                    ),
+                    SizedBox(width: 50.0,),
+                    Text('Vip room',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0),),
+                    SizedBox(width: 50.0,),
+                    FloatingActionButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => viproom(),),);
+                      },
+                      child: Icon(Icons.home),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0,right: 12.0,left: 12.0),
+              child: Container(
+                width: double.infinity,
+                height: 150.0,
+                decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blueGrey
+                ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image(image: NetworkImage('https://th.bing.com/th/id/OIP.p4GrWX4mKMl6WmDddGnX3gHaFh?pid=ImgDet&w=198&h=147&c=7&dpr=1.38',)),
+                    ),
+                    SizedBox(width: 50.0,),
+                    Text('Family room',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0),),
+                    SizedBox(width: 50.0,),
+                    FloatingActionButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => familyroom(),),);
+                      },
+                      child: Icon(Icons.home),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 20.0,),
+            Container(
+              height:100,
+              color: Colors.blueGrey,
+              child: Row(
+                children: [
+                  SizedBox(width: 250.0,),
+                  Container(
+                      color: Colors.yellow,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>viproom()));
+                        },
+                        child: Text('Next'),
+                      ))
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  day2() {}
+}
+class Doubleroom extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('Doubleroom',style: TextStyle(fontSize: 30.0),),
+      ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 500,
+            decoration: BoxDecoration(
+                image:DecorationImage(image: NetworkImage('https://th.bing.com/th/id/OIP.eongKtLhKpeZoTiH_V7R1wHaE0?pid=ImgDet&w=198&h=129&c=7&dpr=1.38'))
+            ),
+          ),
+          Text('Just Relax',style: TextStyle(fontSize: 30.0,color: Colors.orange),)
+        ],
+      ),
+    );
+  }
+}
+class familyroom extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('familyroom',style: TextStyle(fontSize: 30.0),),
+      ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 500,
+            decoration: BoxDecoration(
+                image:DecorationImage(image: NetworkImage('https://th.bing.com/th/id/OIP.eongKtLhKpeZoTiH_V7R1wHaE0?pid=ImgDet&w=198&h=129&c=7&dpr=1.38'))
+            ),
+          ),
+          Text('Just Relax',style: TextStyle(fontSize: 30.0,color: Colors.red),)
+        ],
+      ),
+    );
+  }
+}
+class viproom extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('viproom',style: TextStyle(fontSize: 30.0),),
+      ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 500,
+            decoration: BoxDecoration(
+                image:DecorationImage(image: NetworkImage('https://th.bing.com/th/id/OIP.2oajE59l4bA-YMiZu2fKwQAAAA?pid=ImgDet&w=198&h=149&c=7&dpr=1.38'))
+            ),
+          ),
+          Text('Just Relax',style: TextStyle(fontSize: 30.0,color: Colors.blue),)
+        ],
+      ),
+    );
+  }
+}
